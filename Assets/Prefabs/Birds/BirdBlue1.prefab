@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 388434816423957686}
   - component: {fileID: 2536309752098846239}
+  - component: {fileID: 1346097461561871243}
   - component: {fileID: 880404309783190426}
-  - component: {fileID: 3034406564734758627}
+  - component: {fileID: 3900171635916259532}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: BirdBlue1
   m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494215244111138985}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.70710665, w: 0.70710695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.48, y: 0.79999995, z: 0.79999995}
+  m_LocalScale: {x: 0.47, y: 0.47, z: 0.47}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2536309752098846239
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.45098042, g: 0.9838233, b: 1, a: 1}
+  m_Sprite: {fileID: 149817468323552859, guid: 2eb4f53ef0bb62c4f80a559ec4f11904, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -89,6 +90,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1346097461561871243
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494215244111138985}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d3fe903986792c438e0fa5b28b02b49, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &880404309783190426
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -123,10 +146,10 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
---- !u!114 &3034406564734758627
+  m_Offset: {x: 0.023709746, y: -0.25473335}
+  m_Size: {x: 4.06519, y: 1.5927207}
+  m_Direction: 1
+--- !u!114 &3900171635916259532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,10 +158,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1494215244111138985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eccd50e8b74bfc45a0f68405c66df2d, type: 3}
+  m_Script: {fileID: 11500000, guid: e5bac7b87272fa64dbba34fda27c41b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
-  spawnItemPath: Prefabs/Moeda
-  spawnItemParent: {fileID: 0}
-  possibleDrops: []
+  speed: 1
+  minSpeed: 3
+  maxSpeed: 5
+  possibleDrops:
+  - itemPrefab: {fileID: 1407216743003101938, guid: 35502d18a38344743afea2ea9f4ca2cd, type: 3}
+    dropChancePercent: 100

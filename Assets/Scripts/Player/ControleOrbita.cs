@@ -5,6 +5,9 @@ public class ApontarFilhoParaMouse : MonoBehaviour
     public Transform filhoOrbitante;
 
     public float angulo;
+    public float anguloNoClamp;
+    public float anguloMin = -10f;
+    public float anguloMax = 190f;
 
     Vector3 mousePos, direcao;
 
@@ -19,12 +22,20 @@ public class ApontarFilhoParaMouse : MonoBehaviour
 
         // Calcula o ângulo
         angulo = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
+        anguloNoClamp = angulo;
 
-        if (angulo > 0)
+        // Limita o ângulo
+        angulo = Mathf.Clamp(angulo, anguloMin, anguloMax);
+
+        if (anguloNoClamp < anguloMax && anguloNoClamp > anguloMin)
         {
-            // Rotaciona o objeto pai (isso faz o filho girar com ele)
-            transform.rotation = Quaternion.Euler(0, 0, angulo);
+            transform.rotation = Quaternion.Euler(0, 0, anguloNoClamp);
         }
+
+        // Rotaciona o objeto pai (isso faz o filho girar com ele)
+        
+
+
 
     }
 }

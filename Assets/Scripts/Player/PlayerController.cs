@@ -4,7 +4,6 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     float moveX;
-
     public float moveSpeed = 3;
     void Start()
     {

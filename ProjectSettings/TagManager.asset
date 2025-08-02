@@ -9,6 +9,8 @@ TagManager:
   - ScoreManager
   - Bullet
   - Moeda
+  - Molotove
+  - Ground
   layers:
   - Default
   - TransparentFX

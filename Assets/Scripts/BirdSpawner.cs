@@ -9,16 +9,12 @@ public class BirdSpawner : MonoBehaviour
     public GameObject spawnItemParent;
     Collider2D collider;
     GameObject lastInstance;
-
-
     float RandomY, RandomSpeed;
-
     float minY, maxY;
-    float minSpeed = 2, maxSpeed = 5;
     void Start()
     {
         _SpawnRate = spawnRate;
-        collider = gameObject.GetComponent<Collider2D>();
+        collider = GetComponent<Collider2D>();
         minY = collider.bounds.min.y;
         maxY = collider.bounds.max.y;
 
@@ -28,16 +24,35 @@ public class BirdSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RandomY = Random.Range(minY, maxY);
-        RandomSpeed = Random.Range(minSpeed, maxSpeed);
+       
 
         spawnRate -= Time.deltaTime;
         if (spawnRate <= 0)
         {
-            spawnRate = _SpawnRate;
-            lastInstance = Instantiate(birds[0], new Vector3(transform.position.x, RandomY, transform.position.z), birds[0].transform.rotation, parent.transform);
-            // lastInstance.gameObject.GetComponent<BirdBehavior>().Speed = RandomSpeed;
-            // lastInstance.gameObject.GetComponent<BirdBehavior>().spawnItemParent = spawnItemParent;
+            SpawnBird();
         }
+    }
+
+    public void SpawnBird()
+    {
+        spawnRate = _SpawnRate;
+
+        //Posição
+        RandomY = Random.Range(minY, maxY);
+        Vector3 position = new Vector3(transform.position.x, RandomY, transform.position.z);
+
+        //Instanciar
+        lastInstance = Instantiate(SelectRandomBird(birds), position, birds[0].transform.rotation, parent.transform);
+
+        //Definir Velocidade
+        Bird bird = lastInstance.GetComponent<Bird>();
+        RandomSpeed = Random.Range(bird.minSpeed, bird.maxSpeed);
+        bird.speed = RandomSpeed;
+    }
+
+    public GameObject SelectRandomBird(GameObject[] birdList)
+    {
+        int randomBird = Random.Range(0, birds.Length);
+        return birds[randomBird];
     }
 }

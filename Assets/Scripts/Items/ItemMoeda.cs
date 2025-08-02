@@ -9,10 +9,11 @@ public class ItemMoeda : Items
     {
         sm = GameObject.FindGameObjectWithTag("ScoreManager").gameObject.GetComponent<ScoreManager>();
     }
-    
+
     public override void Efeito()
     {
         sm.AdicionarPonto();
 
     }
+    
 }

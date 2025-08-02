@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    public float health = 1f;
-    public float speed = 3f;
+    public virtual float Health { get; set; } = 1f;
+    public float speed = 1f;
+
+    [Header("Velocidade")]
+    public float minSpeed;
+    public float maxSpeed;
 
     [Header("Item Drops")]
     public DropItem[] possibleDrops;
@@ -22,8 +26,8 @@ public class Bird : MonoBehaviour
 
     public virtual void TakeDamage(float amount)
     {
-        health -= amount;
-        if (health <= 0)
+        Health -= amount;
+        if (Health <= 0)
         {
             Die();
         }
@@ -53,7 +57,6 @@ public class Bird : MonoBehaviour
     }
 
     //Collisions
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Bullet no Passaro");
@@ -62,9 +65,6 @@ public class Bird : MonoBehaviour
         {
             //sm.AdicionarPonto();
             Die();
-            Destroy(collision.gameObject);
         }
     }
-
-
 }

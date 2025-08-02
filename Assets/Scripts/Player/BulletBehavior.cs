@@ -23,9 +23,11 @@ public class BulletBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-          if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Moeda")
         {
-            Destroy(gameObject);
+            return;
         }
+        Destroy(gameObject);
+
     }
 }

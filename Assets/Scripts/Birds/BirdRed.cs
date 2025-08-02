@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Timeline;
 
-public class BirdBlue : Bird
+public class BirdRed : Bird
 {
-    public override float Health { get; set; } = 1f;
+    public override float Health { get; set; } = 2f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,5 +16,10 @@ public class BirdBlue : Bird
     {
         Fly();
     }
+
+    public override void Attack()
+    {
+        //Implementação do attack    
+    } 
 
 }
