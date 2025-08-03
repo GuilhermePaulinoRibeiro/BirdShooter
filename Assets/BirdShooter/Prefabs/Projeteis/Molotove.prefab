@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 5650360958799045059}
   - component: {fileID: 1613909679175053626}
   - component: {fileID: 3896079288795664993}
-  - component: {fileID: 8670960301339736900}
   - component: {fileID: 4240872003850196391}
-  - component: {fileID: 4925724257863881596}
+  - component: {fileID: 8670960301339736900}
   m_Layer: 0
   m_Name: Molotove
   m_TagString: Molotove
@@ -165,20 +164,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &8670960301339736900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4118097754086060959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb89aa5938366648b6afc6c99f4a2fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePrefab: {fileID: 2053932076785729212, guid: 205595435bd5a1a49bbcd50bf1b51ce1, type: 3}
-  velocity: 1
 --- !u!114 &4240872003850196391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,9 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projetil: {fileID: 4118097754086060959}
-  Alvo: {fileID: 7123211126575219117, guid: ce3bae9b4d8eb9e4c852232dbee87cb8, type: 3}
-  cair: 0
---- !u!114 &4925724257863881596
+--- !u!114 &8670960301339736900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,8 +186,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4118097754086060959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f14a1f3c668a9c48821480c6675df82, type: 3}
+  m_Script: {fileID: 11500000, guid: ccb89aa5938366648b6afc6c99f4a2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  others:
-  - {fileID: 7123211126575219117, guid: ce3bae9b4d8eb9e4c852232dbee87cb8, type: 3}
+  firePrefab: {fileID: 2053932076785729212, guid: 205595435bd5a1a49bbcd50bf1b51ce1, type: 3}
+  velocity: 2
+  Alvo: {fileID: 7123211126575219117, guid: ce3bae9b4d8eb9e4c852232dbee87cb8, type: 3}
+  cair: 0

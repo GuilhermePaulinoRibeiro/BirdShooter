@@ -921,6 +921,7 @@ MonoBehaviour:
   birds:
   - {fileID: 1494215244111138985, guid: 3a25360480ad3de4784e03cfbee8d12f, type: 3}
   - {fileID: 1494215244111138985, guid: af991c2f3f855344c88b28d68e28a2aa, type: 3}
+  - {fileID: 1494215244111138985, guid: e7101fa4fa597cc40a268fc56b5f4369, type: 3}
   parent: {fileID: 1531361130}
   spawnItemParent: {fileID: 54825009}
 --- !u!1 &619394800
@@ -2634,7 +2635,20 @@ PrefabInstance:
       propertyPath: Alvo
       value: 
       objectReference: {fileID: 328013409}
-    m_RemovedComponents: []
+    - target: {fileID: 5538280281604959198, guid: af991c2f3f855344c88b28d68e28a2aa, type: 3}
+      propertyPath: others.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538280281604959198, guid: af991c2f3f855344c88b28d68e28a2aa, type: 3}
+      propertyPath: 'others.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2993137489601152918, guid: c22e3a8f665aeca489f895b8eba7e09d, type: 3}
+    - target: {fileID: 8130454162438816742, guid: af991c2f3f855344c88b28d68e28a2aa, type: 3}
+      propertyPath: velocity
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5538280281604959198, guid: af991c2f3f855344c88b28d68e28a2aa, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6161136051303929216, guid: af991c2f3f855344c88b28d68e28a2aa, type: 3}
     m_AddedGameObjects: []
